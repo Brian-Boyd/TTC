@@ -1,0 +1,41 @@
+body,td{font-size:75%;font-family:verdana,arial;}
+table{border-top:1px solid #333;border-right:1px solid #333;border-left:0;border-bottom:0;width:100%;}
+td{border-left:1px solid #333;border-bottom:1px solid #333;border-top:0;border-right:0;}
+img{border:0;}
+dl,dd,dt{margin:0;padding:0;}
+h5{font-size:1.2em;margin:0.3em 0;padding:0;}
+div{display:block;}
+td{padding:2px;}
+.printFriendlyButton,.printHidden{display:none;}
+#disclaimer{text-align:center;}
+.halfL{float:left;width:49.5%;}
+.halfR{float:right;width:49.5%;}
+.alignHeight{height:11em;}
+fieldset{margin:8px 0;padding:0 8px;}
+.full{clear:both;}
+.infoSection{padding:0.5em 0;}
+.cartSum thead td{text-align:left;font-weight:bold;}
+.cartSum td{text-align:right;}
+.cartSum td.qty{text-align:center;}
+.cartSum tr.subHead td{text-align:left;font-weight:bold;}
+.prodDesc{text-align:left;}
+.optCheckbox{display:none;}
+#policyContent{font-size:85%;}
+legend{font-weight:bold;font-size:1.3em;}
+#orderInfo dl dt{float:left;width:15em;}
+#preOrderInfo dl dt{float:left;width:10em;}
+.orderOptions {display:none;}
+.printDetails {display:none;}
+.prodDesc img {border: 1px solid #CCCCCC;display: block;float: left;margin-right: 10px;}
+.prodDesc .prodInfo {display:block;}
+.fll {display:none;}
+.subtotal .priceRow { font-weight:bold;}
+.ListTitle {display:none;}
+fieldset p {word-wrap:break-word;max-width:1200px;}
+#remitInfo_in{margin:10px 0;padding:10px;}
+#remitInfo_in p{margin:0px; color:#da6506; font-weight:bold;}
+fieldset {margin:8px 15px 24px;padding:15px 10px 10px;position:relative;text-align:left;border:1px solid #999;}
+table{border-top:1px solid #999;border-right:1px solid #999;}
+td{border-left:1px solid #999;border-bottom:1px solid #999;}
+
+@media print{.printButton{display:none;}}

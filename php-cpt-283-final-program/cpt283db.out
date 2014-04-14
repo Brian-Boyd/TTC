@@ -1,0 +1,80 @@
+-- MySQL dump 10.11
+--
+-- Host: localhost    Database: cpt283db
+-- ------------------------------------------------------
+-- Server version	5.0.45-community-nt
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `prodinv`
+--
+
+DROP TABLE IF EXISTS `prodinv`;
+CREATE TABLE `prodinv` (
+  `ID` int(11) NOT NULL default '0',
+  `UnitsInStock` int(11) default NULL,
+  `UnitPrice` float(7,2) default NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `prodinv`
+--
+
+LOCK TABLES `prodinv` WRITE;
+/*!40000 ALTER TABLE `prodinv` DISABLE KEYS */;
+INSERT INTO `prodinv` VALUES (112222212,81,49.99),(123567901,91,49.99),(135913590,101,29.99),(148259279,111,19.99),(160604968,121,49.99),(172950657,131,44.99),(185296246,141,14.99),(197641935,151,15.99),(209987624,161,26.99),(222333313,171,27.99),(234679002,181,18.99),(248024681,1,10.99),(248024689,11,11.99),(371481478,21,12.99),(494938267,31,13.99),(494938269,21,12.99),(494938272,1,10.99),(494938275,11,11.99),(494938278,41,14.99),(494938281,51,15.99),(494938284,61,16.99),(494938287,71,39.99),(494938290,81,49.99),(494938293,91,49.99),(494938296,101,29.99),(494938299,111,19.99),(494938302,121,49.99),(494938305,131,44.99),(494938308,141,14.99),(494938311,151,15.99),(494938314,161,26.99),(494938317,171,27.99),(494938320,181,18.99),(494938323,191,29.99),(494938326,201,17.98),(494938329,31,13.99),(618395056,41,14.99),(741851845,51,15.99),(865308634,61,16.99),(911111111,191,29.99),(911111112,201,17.98),(988765423,71,39.99);
+/*!40000 ALTER TABLE `prodinv` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `ID` int(11) NOT NULL default '0',
+  `model` varchar(12) default NULL,
+  `weight` float(5,2) default NULL,
+  `image` varchar(20) default NULL,
+  `summary` tinytext,
+  `department` varchar(10) default NULL,
+  `media` varchar(12) default NULL,
+  `category` varchar(15) default NULL,
+  `title` varchar(20) default NULL,
+  `groups` varchar(30) default NULL,
+  `entertainerauthor` varchar(30) default NULL,
+  `feature` varchar(35) default NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (112222212,'bok-3119-h',2.00,'112222212.jpg','Microsoft Office 2000 reference manual','Books','Hardcover','Computer','Office 2000','Que Publishing','Laura Stewart','Platinum Eidtion'),(123567901,'bok-5573-s',2.10,'1235679001.jpg','Using JavaScript Special Edition reference manual','Books','Softback','Computer','JavaScript','Que Publishing','Jerry Honeycutt','Free online updates'),(135913590,'bok-7487-s',2.20,'1359135790.jpg','Web Programming with Perl 5, includes CD-Rom','Books','Softback','Computer','Perl 5','Sams Publishing','Bill Middleton, Brian Deng & C','CD-Rom included'),(148259279,'bok-0421-s',2.30,'','Dreamweaver - Visual QuickStart Guide manual','Books','Softback','Computer','Dreamweaver','Macromedia Press','J. Tarin Towers','Visual QuickStart Guide'),(160604968,'bok-2585-s',2.40,'1606049368.jpg','Using InternetWare, Special Edition','Books','Softback','Networks','InternetWare','Que Publishing','Craig Zacker','Complete reference'),(172950657,'bok-4789-s',2.50,'1729506157.jpg','Windows NT 4.0 Installation & Configuration Handbook','Books','Softback','Networks','Windows NT 4.0','Que Publishing','Jim Boyce','CD-Rom included'),(185296246,'vid-7243-v',1.20,'1852962946.jpg','Animal House, life at Delta fraternity house','Video','VHS','Comedy','Animal House','National Lampoon','John Belushi, Tim Mathinson','Delta fraternity'),(197641935,'vid-9957-v',1.30,'1976419735.jpg','First Wives Club, Don\'t get mad, Get everything','Video','VHS','Comedy','First Wives Club','Paramount Pictures','Bette Midler, Goldie Hawn, Dia','Don\'t get mad, Get everything'),(209987624,'vid-1871-v',1.40,'2099876524.jpg','Lion King with songs by Elton John ','Video','VHS','Animated','Lion King','Walt Disney pictures','Elton John','Circle of Life'),(222333313,'vid-4625-v',1.50,'2223333313.jpg','Lion King II, Simba\'s Pride','Video','VHS','Animated','Lion King II, Simba\'','Walt Disney pictures','Simba','Return to Pride Rock'),(234679002,'vid-6539-v',1.60,'2346790102.jpg','Cranberries Live, recorded live at the London Astoria 2','Video','VHS','Concerts','Cranberries Live','Cranberries','O\'Riondan','Linger'),(248024681,'mus-4417-c',0.50,'','Fleetwood Mac featuring Rhiannon','Music','CD','Rock','Fleetwood Mac','Fleetwood Mac','Fleetwood Mac','Rhiannon'),(248024689,'mus-6581-c',0.60,'','Classic Elton John favorites','Music','CD','Rock','Duets','Elton John','Elton John','Don\'t go breaking my heart'),(371481478,'mus-9215-c',0.70,'371481478.jpg','ZZ Top Greatest Hits featuring their hit Legs','Music','CD','Rock','ZZ Top Greatest Hits','ZZ Top','ZZ Top','Legs'),(494938267,'mus-1439-c',0.80,'494938267.jpg','Sound Track to the movie Titanic including My Heart Will Go On','Music','CD','Show','Titanic','Sountrack','Celine Dion','My heart will go on'),(494938269,'mus-1189-t',0.70,'494938267.jpg','Sound Track to the movie Titanic including My Heart Will Go On','Music','Tape','Show','Titanic II','Sountrack','Celine Dion','My heart will go on'),(494938272,'mus-1943-t',0.50,'371481478.jpg','ZZ Top Greatest Hits featuring their hit Legs','Music','Tape','Rock','ZZ Bottom Big Hits','ZZ Top','ZZ Top','Legs'),(494938275,'mus-1947-t',0.60,'','Fleetwood Mac featuring Rhiannon','Music','Tape','Rock','Floatwood Mac','Fleetwood Mac','Fleetwood Mac','Rhiannon'),(494938278,'mus-2001-t',0.90,'','Classic Elton John favorites','Music','Tape','Rock','Kiki and Me','Elton John','Elton John','Don\'t go breaking my heart'),(494938281,'mus-2005-t',1.00,'618395056.jpg','Sound Track to Phantom of the Opera','Music','Tape','Show','Phantom of the Opera','Original Cast','Michael Crawford','The Music of the Night'),(494938284,'mus-2009-c',1.10,'741851845.jpg','Neil Diamonds Serenade, finest 70\'s hits including Longfellow Serenade','Music','CD','Classic Rock','Serenade','Neil Diamond','Neil Diamond','Longfellow Serenade'),(494938287,'mus-2213-c',1.90,'865308634.jpg','Born in the USA by Bruce Springsteen & The E Street Band','Music','CD','Classic Rock','Born in the USA','Bruce Springsteen & The E Stre','Bruce Springsteen','Born in the USA'),(494938290,'bok-2817-h',2.00,'988765423.jpg','UNIX Special Edition reference manual','Books','Hardcover','Computer','UNIX','Que Publishing','Peter Kuo','Special Edition'),(494938293,'bok-2241-s',2.10,'112222212.jpg','Microsoft Office 2000 reference manual','Books','Softback','Computer','Office 2007','Que Publishing','Laura Stewart','Platinum Eidtion'),(494938296,'bok-2125-h',2.20,'1235679001.jpg','Using JavaScript Special Edition reference manual','Books','Hardcover','Computer','CoffeeScript','Que Publishing','Jerry Honeycutt','Free online updates'),(494938299,'bok-2129-h',2.30,'1359135790.jpg','Web Programming with Perl 5, includes CD-Rom','Books','Hardcover','Computer','Perl 6','Sams Publishing','Bill Middleton, Brian Deng & C','CD-Rom included'),(494938302,'bok-2533-h',2.40,'','Dreamweaver - Visual QuickStart Guide manual','Books','Hardcover','Computer','Nightmares','Macromedia Press','J. Tarin Towers','Visual QuickStart Guide'),(494938305,'bok-2397-h',2.50,'1606049368.jpg','Using InternetWare, Special Edition','Books','Hardcover','Networks','InternetWear','Que Publishing','Craig Zacker','Complete reference'),(494938308,'bok-2241-h',1.20,'1729506157.jpg','Windows NT 4.0 Installation & Configuration Handbook','Books','Hardcover','Networks','Windoze YP','Que Publishing','Jim Boyce','CD-Rom included'),(494938311,'vid-1245-d',1.30,'1852962946.jpg','Animal House, life at Delta fraternity house','Video','DVD','Comedy','Animal Barn','National Lampoon','John Belushi, Tim Mathinson','Delta fraternity'),(494938314,'vid-1249-d',1.40,'1976419735.jpg','First Wives Club, Don\'t get mad, Get everything','Video','DVD','Comedy','Last Wives Club','Paramount Pictures','Bette Midler, Goldie Hawn, Dia','Don\'t get mad, Get everything'),(494938317,'vid-1253-d',1.50,'2099876524.jpg','Lion King with songs by Elton John ','Video','DVD','Animated','Lyin King','Walt Disney pictures','Elton John','Circle of Life'),(494938320,'vid-1257-d',1.60,'2223333313.jpg','Lion King II, Simba\'s Pride','Video','DVD','Animated','Lyin King 2','Walt Disney pictures','Simba','Return to Pride Rock'),(494938323,'vid-1261-d',1.70,'2346790102.jpg','Cranberries Live, recorded live at the London Astoria 2','Video','DVD','Concerts','Cranberries Crushed','Cranberries','O\'Riondan','Linger'),(494938326,'vid-1265-d',1.80,'9111111111.jpg','Pulse, Pink Floyd\'s ultimate live concert','Video','DVD','Concerts','Pulse','Pink Floyd','David Gilmour','Wish you were here'),(494938329,'vid-1269-d',0.80,'9111111112.jpg','Stevie Nicks, live concert at Red Rocks, CO','Video','DVD','Concerts','Stevie, Live at Red ','Stevie Nicks','Stevie Nicks','Dreams'),(618395056,'mus-3883-c',0.90,'618395056.jpg','Sound Track to Phantom of the Opera','Music','CD','Show','Opera of the Phantom','Original Cast','Michael Crawford','The Music of the Night'),(741851845,'mus-6617-t',1.00,'741851845.jpg','Neil Diamonds Serenade, finest 70\'s hits including Longfellow Serenade','Music','Tape','Classic Rock','Longfellow','Neil Diamond','Neil Diamond','Longfellow Serenade'),(865308634,'mus-8501-t',1.10,'865308634.jpg','Born in the USA by Bruce Springsteen & The E Street Band','Music','Tape','Classic Rock','Barn in the USA','Bruce Springsteen & The E Stre','Bruce Springsteen','Born in the USA'),(911111111,'vid-8923-v',1.70,'9111111111.jpg','Pulse, Pink Floyd\'s ultimate live concert','Video','VHS','Concerts','Heartbeat','Pink Floyd','David Gilmour','Wish you were here'),(911111112,'vid-7624-v',1.80,'9111111112.jpg','Stevie Nicks, live concert at Red Rocks, CO','Video','VHS','Concerts','Stevie, Taped at Red','Stevie Nicks','Stevie Nicks','Dreams'),(988765423,'bok-1085-s',1.90,'988765423.jpg','UNIX Special Edition reference manual','Books','Softback','Computer','Eunuchs','Que Publishing','Peter Kuo','Special Edition');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2008-10-24 18:34:02

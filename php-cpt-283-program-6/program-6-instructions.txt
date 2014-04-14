@@ -1,0 +1,118 @@
+DIRECTIONS
+
+You have a new file to work with:  ricks_inventory.php.  The great news is that this
+file contains a single string variable with every piece of data from the inventory
+table you first encountered in Program #3, but also two more pieces of data.  So, now
+you won't be burdened with the need to create dozens of variables and initialize them
+to table values.  The whole table and more are in the file!
+
+As suggested above, the days rented value for each equipment has been updated with the
+correct number.  The names of the pieces of equipment have been abbreviated somewhat,
+and now there are no spaces in any of the individual data.  Further, there are two
+more "fields" of data:  the actual revenue generated so far by each piece of equipment
+and the total hours of operation for each one.  Someone told Rick that if he doesn't
+track the actual usage of the equipment, then using the depreciation factor alone
+might raise eyebrows in certain federal units!  Fortunately, each piece of equipment
+came installed with an hour meter, and we now have those values in the data tracker.
+
+So, just to summarize, the file now contains details on each equipment in this order:
+equipment name; year acquired; serial number; rental charge per day; days rented so
+far this year; total revenue for this equipment so far; original price of the equipment;
+total hours in operation; depreciation factor; and scheduled maintenance interval.
+(With all this data available, it's almost as if we got these numbers out of a database! :))
+ 
+Of course, now the challenge becomes that of getting the data into appropriate variables
+to use. Actually, I should say into an appropriate array, because as you surely must
+anticipate, that's what this program is going to be about.  One by one you will need
+to read each equipment's data into an associative array.  I will cover some specifics
+in just a moment.
+
+NOTE.  There are many different ways to go about achieving the goals of any programming
+project.  There are almost always multiple ways of accomplishing the same thing with
+different coding structures.  But what this program will require are two mandatory
+concepts:  #1, use an associative array; and #2, successfully use a foreach loop.  Your
+processing must consist of a similar while loop to what you used in Program #5:  a while
+loop predicated on there still being data to take out of the string with strtok.  Only
+this time, instead of grabbing the values and placing them into separate variables, you
+must use an associative array to hold all ten pieces of data for one equipment.  You
+are to use only one array to hold equipment data:  you are not allowed to use a separate
+array for each equipment!  Therefore, you will need to grab the data for each equipment
+one set of data at a time.
+
+Let's say you decide to use an array called $equipment.  Make up string names for each
+of the ten keys you will need for the array.  For example, you might use 'name' for the
+equipment's name.  Loading the array elements is no different from loading the data into
+a "normal" variable:  you just need to use the correct array element on the left side
+of the assignment (with the correct key).  For example, to get the first set of values,
+I would probably start pulling them out this way:
+
+$equipment['name'] = rtrim(strtok($data, " "));
+$equipment['year'] = rtrim(strtok(" "));
+$equipment['serial']  = rtrim(strtok(" "));
+
+And so on.  The first nine values for each equipment are terminated by spaces and the
+last value by a carriage return.
+(Remember that after the very first call to strtok, you can't use the variable name again,
+or else the strtok function will start all over again at the beginning of the entries.)
+So, now after you have grabbed the first set of equipment data, ten values, the element
+$equipment['name'] will have the value 'Multiquip_Tamper' in it.
+Continuing, $equipment['year'] will have the value 2006 in it, etc.
+
+After getting all of the first equipment's ten values into the array, now start up your
+while loop.  You can just use the array's first element as the condition, since if the
+value $equipment['name'] is defined, then there is more work to do.
+
+Inside the while loop is the time you need to process the array.  That gets us to my next
+mandatory requirement.  You must use a foreach loop to loop through all the elements of the
+array $equipment.  Your first requirement inside the loop will be to display some data for
+each equipment in columns.  For that purpose you are not allowed to simply use the array
+values directly, for example, printing $equipment['name'] and $equipment['year'], etc.
+That would be much too easy, and you wouldn't be learning anything about the foreach loop.
+
+So, inside your while loop, start a foreach loop.  As I illustrated in my Addendum to this
+chapter, the foreach syntax "breaks down" the loop elements into two simple variables, often
+called $key and $value.  If you follow the naming system I use in the Addendum, then the
+first $key will be 'name' and the first $value will be 'Multiquip_Tamper'.  The next time
+through the foreach loop, $key will be 'year' and $value will be 2006.  So, each time
+through your foreach loop the variables $key and $value become the next key/value pair for
+the current equipment.
+
+(At this point you might be thinking:  this is surely a clunky way to deal with the equipment
+data.  Why not just use the array data directly?  The answer is that I want you to learn as
+much about the foreach loop as possible.  So, I want to force you to work with the data
+broken down inside the foreach loop to really master that tool.)
+
+Here's what I want you to perform inside the foreach loop.  Display a one-line listing of
+some of the data for the equipment.  Show data for each equipment in the following order.
+(These are example headers for each column.)
+
+	EQUIPMENT	YEAR	SERIAL#	RENTALCHG	DAYSOUT	REVENUE	ORIGPRICE	HOURS	NOTES	
+
+The EQUIPMENT through HOURS values come right from your data values.  But note that you are
+not to display the values for Depreciation Factor and Maintenance Interval.  As you encounter
+these values in the foreach loop, you need to skip printing them.  (Hint:  you'll need to
+test to see if the $key is equal to either of these.)
+
+So, just to make this as clear as I can.  Inside the foreach loop, you will have displayed
+the EQUIPMENT, YEAR, etc all the way to the HOURS value for one equipment.  The total amount
+of code required to do this should not be more than two to three lines, not including the
+start of the loop, that is, the foreach header.  I am not looking for a beautifully composed
+set of incredibly spaced and formatted columns.  I am looking for whether or not you
+understand how to use the keys and values as they are parsed from the array.
+
+Now, after the foreach loop has displayed almost one complete line, there are a few more
+details to attend to.  The NOTES column is not yet composed.  Here's the kind of notes that
+you need to display.  For any equipment that has over 1000 hours of usage, display the
+letter 'H' in that column, a flag that this equipment is rather High in usage and needs to
+be inspected more often.  Also, for any equipment that has fewer than 90 days actually
+rented, place an 'L' in the NOTES column, a flag that shows that this equipment is an
+underperformer (Loser).  (Actually, it stands for Low usage!)  Of course, there may be
+equipment with both of those letters in the NOTES column.  To take care of the NOTES, though,
+you have full use of the array and its elements.  So, just test the appropriate elements
+and print either or both of those characters for the equipment that fall into those categories.
+
+Now, just a couple more things to do.  Rick wants two totals for the end of the report:  the
+total number of days that all equipment has been rented; and the total revenue for all rental
+operations.  Both of these totals, of course, must also be accumulated within your while loop.
+(Don't forget to display them at the end of the report.)  At the bottom of the loop, you need
+to "read" another set of data into the $equipment array.

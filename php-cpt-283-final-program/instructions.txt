@@ -1,0 +1,80 @@
+DIRECTIONS
+
+As with Program #8, you need to start by presenting to the user a list of the various
+departments that Rick has merchandise for sale.  Although you know that, as of this
+very minute, the goods are all listed in only three departments—Books, Music, and
+Video—you cannot limit the web site to a static list of choices.  In the very near
+future, Rick has designs on having a complete Software department, an Electronics
+department, et al.  So, you need to start by querying the database for the current
+list of departments.
+
+This presents two challenges.  The first is that the departments are currently listed
+only as a field in the products table, which means they are listed multiple times.  We
+certainly don't want to have the same department name listed more than once.  That
+would be very confusing.  So, make sure that the first menu lists each department only
+one time.  (Hint:  you may want to get familiar with the SQL DISTINCT modifier.)
+Second, if you simply start the project with an HTML page, how are you going to execute
+a query for its content?  The solution is up to you, but one acceptable solution would
+be to start with a "Google result" page, as if the user had looked up and found Rick's
+company with a search engine.  So, this HTML page would allow the user to click on a
+listing for Rick's site and get your program rolling along.
+
+Once the user has selected a department from Rick's web site, you should show the
+selected department in a header, and of course list the currently available offerings
+in that department.  List the following information in this order:  the ID number, the
+Entertainer/Author, the Title, the Media, and the Feature.  But this time, the listing
+must be sorted by the Entertainer/Author, not presented in the order that it came out
+of the database.
+
+The user must be allowed to select as many of the items as he/she wants to purchase.
+Once the selections are done and submitted, present the second listing as before,
+showing the following data for the items that were selected:  ID number,
+Entertainer/Author, Title, Price, how many are in stock, and Summary.  This listing
+must also be sorted by Entertainer/Author.  The heading should again incorporate the
+department name.  (The requirement for some sort of header should not have to be
+stated anymore!)  Below the listing inform the user that this is the user's chance to
+accept or reject any of the goods.  They should be asked to check any and all of the
+items that they really want to purchase.
+
+Once they submit this form to purchase the specific goods, you now need to present them
+with a summary of the items they are buying, including their prices, and then a final
+box showing the total cost of their purchase.  Below that listing, ask for their name,
+address, the type of card they will be using, and a card number.  Of course, we will
+not use any real information here, so if you want to have a bit of fun with it, go ahead.
+The card number, though, should be realistic:  it should have 16 digits.
+
+When this form is submitted, send one last form to the user that displays the final
+purchase info, essentially a printable receipt.  Quote their name, address, and the last
+four digits of the card only.  Let them know that their card was approved and that the
+goods will be shipped soon.  Also, invite them to print out this "receipt".  Finally,
+when they are done viewing this information, give them a button or a link to press that
+takes them back to the first page showing the departments in Rick's store.
+(Don't return them to the search page, that is, the opening!)
+
+In a finished program of this nature, it would make sense that you update the database
+reflecting that these items have been purchased and their quantities have been reduced.
+However, I don't want anyone changing my database as I grade!  So, do not attempt to make
+any updates to the database.  None of your queries are allowed to change the state of the
+database at any time!  (In fact, I will be altering your scripts to log on as a guest,
+an account in my database system that does not have those privileges.)
+
+The names of all files must incorporate your last name.  Name the initial HTML form
+name_fp.html, where name is your last name.  For all the PHP programs, call them
+name_Ricks1.php, name_Ricks2.php, etc.  The number of files you end up with is up to you.
+Just make sure to preface all of them with your last name.
+
+EXTRA CREDIT
+
+Here are some things you can do to earn more points.  These are my specific examples.
+I will award other points for anything extra you build in to make your database program
+more professional.
+
+(5 pts) We have multiple items for sales by some of the Entertainer/Authors.  When you
+list their products, it would look a lot cleaner to list the Entertainer/Author name
+only for the first item, and leave the column blank until the name changes.  So, for
+any listing display the Entertainer/Author's name only one time, and then for the rest
+of their works, leave the column blank.
+
+(10 pts) Allow the user to search for any artist or author, by name.  Allow them to type
+in the artist's name and then display all works by that artist.  Then, the user must be
+able to "purchase" one or more of the items.
